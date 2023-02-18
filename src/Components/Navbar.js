@@ -39,6 +39,12 @@ const LinksWrapper = styled.div`
   ${media.greaterThan("medium")`
     height: auto !important;
   `}
+
+  ${media.greaterThan("large")`
+  display: flex;
+  justify-content: flex-end;
+  width: 60vw;
+  `}
 `;
 
 const LinkContainer = styled.ul`
@@ -52,8 +58,12 @@ const LinkContainer = styled.ul`
     flex-direction: row;
     justify-items: center;
     align-items: center;
-    width: 75%;
-    // justify-content: space-between;
+    width: 60vw;
+    justify-content: space-between;
+    `}
+
+  ${media.greaterThan("large")`
+    justify-content: space-between;
     `}
   display: flex;
 
@@ -63,15 +73,6 @@ const LinkContainer = styled.ul`
   li {
     list-style: none;
     padding-left: 1rem;
-
-    ${media.greaterThan("large")`
-    padding-left: 3rem;
-    
-    `}
-
-    ${media.greaterThan("huge")`
-    padding-left: 5rem;
-    `}
   }
   // for rendering Navlinks with styled component but yeah it can be a headache doing this
   // a {
@@ -122,6 +123,7 @@ export const navbarData = [
     id: 6,
     url: "/Signup",
     name: "Signup",
+    // CSS: { border: "1px solid #000" },
   },
 ];
 
@@ -162,9 +164,9 @@ const Navbar = () => {
           <LinksWrapper ref={LinksWrapperRef}>
             <LinkContainer ref={LinkContainerRef}>
               {navbarData.map((links) => {
-                const { id, url, name } = links;
+                const { id, url, name, CSS } = links;
                 return (
-                  <li key={id}>
+                  <li key={id} style={CSS}>
                     <NavLink
                       to={url}
                       style={({ isActive }) => {
