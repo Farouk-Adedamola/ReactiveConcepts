@@ -178,6 +178,7 @@ const Card = styled.div`
     }
   }
 `;
+
 const Book = () => {
   return (
     <Fragment>

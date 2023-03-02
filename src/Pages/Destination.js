@@ -11,6 +11,7 @@ import play from "../Assets/play.svg";
 import Category from "../Components/Category";
 import TopSelling from "../Components/TopSelling";
 import Book from "../Components/Book";
+import Logo from "../Components/Logo";
 
 const Wrapper = styled.section`
   padding: 10px 4vw 0 4vw;
@@ -228,6 +229,7 @@ const Contact = () => {
         <Category />
         <TopSelling />
         <Book />
+        <Logo />
       </ComponentWrapper>
     </Fragment>
   );
