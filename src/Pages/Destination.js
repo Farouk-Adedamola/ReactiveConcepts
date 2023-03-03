@@ -12,6 +12,8 @@ import Category from "../Components/Category";
 import TopSelling from "../Components/TopSelling";
 import Book from "../Components/Book";
 import Logo from "../Components/Logo";
+import Subscription from "../Components/Subscription";
+import Footer from "../Components/Footer";
 
 const Wrapper = styled.section`
   padding: 10px 4vw 0 4vw;
@@ -49,6 +51,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  margin-top: 50px;
 
   ${media.greaterThan("medium")`
   /* gap: 5vw; */
@@ -230,6 +233,8 @@ const Contact = () => {
         <TopSelling />
         <Book />
         <Logo />
+        <Subscription />
+        <Footer />
       </ComponentWrapper>
     </Fragment>
   );

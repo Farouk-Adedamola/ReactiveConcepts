@@ -90,13 +90,29 @@ const Contain = styled.div`
 `;
 
 const SectionTwo = styled.div`
-  /* ${media.greaterThan("large")`
-width: 50%;
-`} */
-
   position: relative;
+  ${media.greaterThan("large")`
   left: -7rem;
+`}
+
   .partone {
+    ${media.lessThan("medium")`
+  width: 60vw;
+
+  .ladyfly {
+    width: 60vw;
+  }
+
+  ${media.lessThan("large")`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* width: 400px; */
+  .ladyfly {
+    /* width: 300px; */
+  }
+  `}
+`}
     background: #ffffff;
     box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.02),
       0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0151852),
@@ -143,9 +159,19 @@ const FootMain = styled.div`
 `;
 
 const Card = styled.div`
+  ${media.lessThan("large")`
+  right: 1.3rem;
+  bottom: 3.5rem;
+
+`}
+  ${media.lessThan("medium")`
+  right: 1.3rem;
+  bottom: 3.5rem;
+
+`}
   position: absolute;
   right: -6rem;
-  bottom: 10rem;
+  bottom: 11.5rem;
   padding: 0.5rem 0.8rem;
   background: #ffffff;
   box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.02),
@@ -228,7 +254,7 @@ const Book = () => {
         </Section>
         <SectionTwo>
           <div className="partone">
-            <img src={ladyfly} alt="ladyfly" />
+            <img className="ladyfly" src={ladyfly} alt="ladyfly" />
             <h3 className="partone__Headtext">Trip To Greece</h3>
             {/* <section className="sideText"> */}
             <p className="partone__normaltext">

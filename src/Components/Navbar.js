@@ -48,10 +48,13 @@ const LinksWrapper = styled.div`
 `;
 
 const LinkContainer = styled.ul`
-  line-height: 2rem;
+  line-height: 2.5rem;
   display: flex;
   flex-direction: column;
   padding: 0;
+  /* transform: translateX(40%); */
+  justify-content: center;
+  margin: auto;
 
   ${media.greaterThan("medium")`
     display: flex;
@@ -71,6 +74,7 @@ const LinkContainer = styled.ul`
     text-decoration: none;
   }
   li {
+    text-align: center;
     list-style: none;
     padding-left: 1rem;
   }
@@ -171,8 +175,10 @@ const Navbar = () => {
                       to={url}
                       style={({ isActive }) => {
                         return {
-                          color: isActive ? "red" : "grey",
+                          color: isActive ? "red" : "#000",
                           fontSize: "1.2rem",
+                          fontWeight: "400",
+                          fontFamily: "poppins",
                         };
                       }}
                     >
