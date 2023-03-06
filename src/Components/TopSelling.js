@@ -39,6 +39,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  /* overflow-x: hidden; */
   /* width: 400px; */
   /* background-image: url (${image}); */
 
@@ -48,7 +49,7 @@ const Container = styled.div`
 
   .background_image {
     display: block;
-    width: 400px;
+    max-width: 400px;
     /* position: absolute; */
 
     ${media.lessThan("small")`

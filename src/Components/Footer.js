@@ -68,14 +68,14 @@ const More = [
 
 const Section = styled.section`
   margin-top: 45px;
-  display: grid;
-  justify-content: space-between;
-  align-items: center;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 50px;
-  padding: 50px 30px;
+  /* display: grid; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  /* grid-template-columns: repeat(2, 1fr); */
+  /* gap: 50px; */
   /* padding-bottom : 50px; */
   ${media.greaterThan("medium")`
+  padding: 50px 30px;
   margin-top: 75px;
   display: flex;
   justify-content: space-between;
@@ -85,13 +85,24 @@ const Section = styled.section`
 
 const Wrapper = styled.div`
   ${media.greaterThan("medium")`
-  width: 30%;
+  width: 20%;
+  `}
+
+  ${media.lessThan("medium")`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   `}
 
   p {
     font-family: poppins;
     font-weight: 500;
     color: #5e6282;
+
+    ${media.lessThan("small")`
+text-align: center;
+`}
   }
 `;
 
@@ -109,9 +120,22 @@ const WrapperTwo = styled.div`
 
 const Social = styled.div`
   ${media.greaterThan("medium")`
-  width: 30%;
+  width: 20%;
+  justify-self: flex-end;
   `}
 
+  /* ${media.lessThan("medium")`
+  margin-top: 40px;
+
+`} */
+  ${media.lessThan("medium")`
+  margin-top: 40px;
+  /* margin: auto; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  `}
   main {
     display: flex;
     align-items: center;
@@ -121,7 +145,7 @@ const Social = styled.div`
     width: 120px;
     `} */
     ${media.greaterThan("large")`
-    width: 30%;
+    /* width: 30%; */
     `}
     .instagram {
       padding: 0.2rem 0.3rem;
@@ -146,20 +170,46 @@ const Social = styled.div`
 
   .app {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
-    flex-direction: column;
+    /* flex-direction: column; */
     ${media.greaterThan("large")`
       flex-direction: row;
 
-    `}
-
-    .appstore {
-      ${media.lessThan("medium")`
+    `}.appstore {
+      margin-left: 10px;
+      /* ${media.lessThan("medium")`
         margin-top: 15px;
-        `}
+        `} */
     }
   }
+
+  p {
+    ${media.lessThan("small")`
+  text-align: center;
+`}
+  }
+`;
+
+const FooterLink = styled(Link)`
+  text-decoration: none;
+  color: #5e6282;
+  font-family: poppins;
+  font-weight: 500;
+`;
+
+const ContainerWrap = styled.section`
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  ${media.greaterThan("medium")`
+  /* width: 50vw; */
+  width: 45%;
+  `}
+  ${media.lessThan("small")`
+  justify-content: center;
+gap: 15px;
+`}
 `;
 
 const Footer = () => {
@@ -170,40 +220,42 @@ const Footer = () => {
           <img src={FooterLogo} alt="" />
           <p>Book your trip in minute, get full Control for much longer.</p>
         </Wrapper>
-        <WrapperTwo>
-          <h3>Company</h3>
-          {Company.map((each) => {
-            const { id, text, url } = each;
-            return (
-              <div className="map" key={id}>
-                <Link to={url}>{text}</Link>
-              </div>
-            );
-          })}
-        </WrapperTwo>
-        <WrapperTwo>
-          <h3>Contact</h3>
-          {Company.map((each) => {
-            const { id, text, url } = each;
-            return (
-              <div key={id}>
-                <Link to={url}>{text}</Link>
-              </div>
-            );
-          })}
-        </WrapperTwo>
+        <ContainerWrap>
+          <WrapperTwo>
+            <h3>Company</h3>
+            {Company.map((each) => {
+              const { id, text, url } = each;
+              return (
+                <div className="map" key={id}>
+                  <FooterLink to={url}>{text}</FooterLink>
+                </div>
+              );
+            })}
+          </WrapperTwo>
+          <WrapperTwo>
+            <h3>Contact</h3>
+            {Contact.map((each) => {
+              const { id, text, url } = each;
+              return (
+                <div key={id}>
+                  <FooterLink to={url}>{text}</FooterLink>
+                </div>
+              );
+            })}
+          </WrapperTwo>
 
-        <WrapperTwo>
-          <h3>More</h3>
-          {More.map((each) => {
-            const { id, text, url } = each;
-            return (
-              <div key={id}>
-                <Link to={url}>{text}</Link>
-              </div>
-            );
-          })}
-        </WrapperTwo>
+          <WrapperTwo>
+            <h3>More</h3>
+            {More.map((each) => {
+              const { id, text, url } = each;
+              return (
+                <div key={id}>
+                  <FooterLink to={url}>{text}</FooterLink>
+                </div>
+              );
+            })}
+          </WrapperTwo>
+        </ContainerWrap>
         <Social>
           <main>
             <div>

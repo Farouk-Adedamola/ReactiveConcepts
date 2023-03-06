@@ -23,6 +23,11 @@ border-radius: 129px 20px  20px 20px;
     font-family: poppins;
     font-weight: 600;
     padding: 1rem 1.5rem;
+    ${media.between("medium", "large")`
+  
+    font-size: 30px;
+
+  `}
 
     ${media.greaterThan("large")`
     font-size: 33px;
@@ -33,6 +38,18 @@ border-radius: 129px 20px  20px 20px;
     padding: 0 135px ;
     `}
   }
+
+  ${media.lessThan("medium")`
+  max-width: 600px;
+  margin: auto;
+  /* display: ; */
+  `}
+
+  ${media.between("medium", "large")`
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  `}
 `;
 const SendWrapper = styled.div`
   position: absolute;

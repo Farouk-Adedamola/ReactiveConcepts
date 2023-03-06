@@ -35,6 +35,8 @@ const Wrapper = styled.section`
 `;
 
 const ComponentWrapper = styled.section`
+  /* overflow to fix all unscaling svg problems  */
+  overflow: hidden;
   padding: 10px 4vw 0 4vw;
   ${media.greaterThan("medium")`
   padding: 15px 50px 0 50px;

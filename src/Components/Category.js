@@ -10,64 +10,6 @@ import Bestflight from "../Assets/Bestflight.svg";
 import dottedplus from "../Assets/dottedplus.svg";
 import { Section, Main } from "./style";
 
-// const Section = styled.section`
-//   margin-top: 2rem;
-//   position: relative;
-//   ${media.greaterThan("large")`
-//   margin-top: 4rem;
-//   `}
-//   h1,
-//   h3 {
-//     text-align: center;
-//   }
-
-//   h3 {
-//     font-family: poppins;
-//     font-weight: 600;
-//     font-size: 15px;
-//     color: #5e6282;
-
-//     ${media.greaterThan("medium")`
-//     font-size: 18px;
-//     `}
-//   }
-
-//   h1 {
-//     font-family: volkhov;
-//     font-weight: 700;
-//     font-size: 30px;
-//     margin: 0;
-//     ${media.greaterThan("medium")`
-//     font-size: 50px;
-//     `}
-//   }
-//   img {
-//     ${media.lessThan("medium")`
-//     display: none;
-//     `}
-//     position: absolute;
-//     right: 0;
-//     top: -10px;
-//   }
-// `;
-
-// const Main = styled.main`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-
-//   ${media.greaterThan("medium")`
-//   margin-top: 3rem;
-// `}
-
-//   ${media.greaterThan("large")`
-// display: flex;
-// flex-direction: row;
-// justify-content: space-between;
-// align-items: center;
-// `}
-// `;
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -126,6 +68,17 @@ const Container2 = styled(Container)`
     background: #df6951;
     border-radius: 30px 0px 10px;
   }
+
+  ${media.greaterThan("small") &&
+  media.lessThan("large")`
+  background: none;
+  box-shadow: none;
+
+  .design {
+    display: none;
+  }
+  
+  `}
 `;
 
 const Category = () => {

@@ -169,6 +169,12 @@ const Card = styled.div`
   bottom: 3.5rem;
 
 `}
+
+ ${media.lessThan("small")`
+  right: 0.2rem;
+  bottom: 6.5rem;
+
+`}
   position: absolute;
   right: -6rem;
   bottom: 11.5rem;

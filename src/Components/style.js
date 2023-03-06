@@ -70,4 +70,10 @@ align-items: center;
     position: absolute;
     right: 0;
   }
+
+  ${media.between("medium", "large")`
+  display: grid;
+  grid-template-columns: ${(props) =>
+    props.variant === "destination" ? "1fr 1fr 1fr" : " 1fr 1fr"};
+  `}
 `;
